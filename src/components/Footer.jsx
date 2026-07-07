@@ -6,6 +6,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#0D3B5C] text-white pt-20 pb-8">
       <div className="container mx-auto px-4 lg:px-10">
+        <div className="inner">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div>
             <div className="mb-6">
@@ -70,6 +71,7 @@ const Footer = () => {
             <a href="#" className="hover:text-white transition-colors">Terms & Conditions</a>
             <a href="#" className="hover:text-white transition-colors">Partnerships</a>
           </div>
+        </div>
         </div>
       </div>
     </footer>

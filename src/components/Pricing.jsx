@@ -5,7 +5,7 @@ const Pricing = () => {
   return (
     <section className="py-24 bg-white text-center">
       <div className="container mx-auto px-4 lg:px-10">
-        
+        <div className="inner">
         <div className="flex items-center justify-center gap-3 mb-5">
           <div className="h-[1px] w-10 bg-[#7fb8e1]"></div>
           <span className="text-[#1668A3] font-bold text-[13px] tracking-[0.15em] uppercase">Choose a Plan</span>
@@ -72,6 +72,7 @@ const Pricing = () => {
             </ul>
             <button className="w-full py-3.5 rounded-full border border-[#7fb8e1] text-[#1668A3] font-bold text-[14.5px] text-center group-hover:bg-white group-hover:text-[#0D3B5C] group-hover:border-white transition-all duration-300">Enroll Now</button>
           </div>
+        </div>
         </div>
       </div>
     </section>

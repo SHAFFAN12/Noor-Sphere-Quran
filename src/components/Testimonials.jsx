@@ -49,7 +49,8 @@ const testimonials = [
 const Testimonials = () => {
   return (
     <section className="bg-[#0E2E54] text-white py-24">
-      <div className="container mx-auto px-4 lg:px-10 text-center max-w-[1200px]">
+      <div className="container mx-auto px-4 lg:px-10">
+      <div className="inner text-center">
         
         <div className="flex items-center justify-center gap-3 mb-5">
           <div className="h-[1px] w-8 bg-[#3b85c2]"></div>
@@ -82,6 +83,7 @@ const Testimonials = () => {
             </div>
           ))}
         </div>
+      </div>
       </div>
     </section>
   );

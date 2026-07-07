@@ -4,7 +4,8 @@ import { Check } from 'lucide-react';
 const TrialBanner = () => {
   return (
     <section className="py-24 bg-white">
-      <div className="container mx-auto px-4 lg:px-10 max-w-[1200px]">
+      <div className="container mx-auto px-4 lg:px-10">
+      <div className="inner">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <div>
             <div className="flex items-center gap-3 mb-6">
@@ -90,6 +91,7 @@ const TrialBanner = () => {
             </form>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );

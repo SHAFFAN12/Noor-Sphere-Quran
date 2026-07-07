@@ -69,7 +69,7 @@ const Programs = () => {
   return (
     <section className="py-24 bg-[#F4FAFF] text-center">
       <div className="container mx-auto px-4 lg:px-10">
-        
+        <div className="inner">
         <div className="flex items-center justify-center gap-3 mb-5">
           <div className="h-[1px] w-10 bg-[#7fb8e1]"></div>
           <span className="text-[#1668A3] font-bold text-[13px] tracking-[0.15em] uppercase">Our Programs</span>
@@ -107,6 +107,7 @@ const Programs = () => {
               <a href="#" className="flex items-center gap-1.5 text-[#1668A3] font-bold text-[14.5px] hover:text-[#0b5894] transition-colors">Enroll Now <ChevronRight size={16} /></a>
             </div>
           ))}
+        </div>
         </div>
       </div>
     </section>

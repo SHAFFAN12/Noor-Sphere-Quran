@@ -34,7 +34,8 @@ const events = [
 const Events = () => {
   return (
     <section className="py-24 bg-[#f4f9fd] text-center">
-      <div className="container mx-auto px-4 lg:px-10 max-w-[1200px]">
+      <div className="container mx-auto px-4 lg:px-10">
+      <div className="inner">
         
         <div className="flex items-center justify-center gap-3 mb-5">
           <div className="h-[1px] w-8 bg-[#7fb8e1]"></div>
@@ -67,7 +68,7 @@ const Events = () => {
             </div>
           ))}
         </div>
-        
+      </div>
       </div>
     </section>
   );

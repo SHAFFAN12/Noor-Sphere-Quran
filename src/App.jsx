@@ -1,31 +1,17 @@
 import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Stats from './components/Stats';
-import About from './components/About';
-import Programs from './components/Programs';
-import Pricing from './components/Pricing';
-import Testimonials from './components/Testimonials';
-import TrialBanner from './components/TrialBanner';
-import Events from './components/Events';
-import Footer from './components/Footer';
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
 import './App.css';
 
 function App() {
   return (
-    <div className="app">
-      <Header />
-      <Hero />
-      <Stats />
-      <About />
-      <Programs />
-      <Pricing />
-      <Testimonials />
-      <TrialBanner />
-      <Events />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

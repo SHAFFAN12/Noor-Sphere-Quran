@@ -14,6 +14,7 @@ const Hero = () => {
       </div>
       
       <div className="container relative z-20 flex items-center h-full py-16 w-full mx-auto px-4 lg:px-10">
+        <div className="inner flex items-center w-full h-full">
         
         <div className="w-[55%] pr-10 animate-fade-in">
           <div className="bg-white px-4 py-1.5 rounded-full inline-flex mb-5 border border-slate-200 text-[#1668A3] normal-case tracking-normal">
@@ -25,12 +26,12 @@ const Hero = () => {
           </div>
           
           <h1 className="text-5xl lg:text-6xl mb-5 leading-tight font-bold text-[#0D3B5C]" style={{ fontFamily: "'Playfair Display', serif" }}>
-            Learn the Holy <span className="text-[#1668A3] italic" style={{ fontFamily: "'Playfair Display', serif" }}>Quran</span><br />
+            Learn the Holy <span className="text-[#1668A3] italic font-semibold" style={{ fontFamily: "'Playfair Display', serif" }}>Quran</span><br />
             Online<br />
             Anytime, Anywhere
           </h1>
           
-          <p className="text-base mb-8 max-w-md text-[#6FB8EA]">
+          <p className="text-base mb-8 max-w-md text-[#5C7D92]">
             International Quranic Academic is a trusted online Quran Academy providing expert one-to-one Quran classes for kids & adults across USA and worldwide. Expert certified male & female tutors available.
           </p>
           
@@ -84,9 +85,10 @@ const Hero = () => {
             <span>✦</span> No credit card required • 3 classes free <span>✦</span>
           </div>
         </div>
-        
+        </div>
+
       </div>
-      
+
       {/* Text Slider */}
       <div className="absolute bottom-0 left-0 w-full bg-[#1668A3] text-white py-3 z-30 overflow-hidden flex shadow-lg">
         <div className="flex animate-marquee whitespace-nowrap w-max">

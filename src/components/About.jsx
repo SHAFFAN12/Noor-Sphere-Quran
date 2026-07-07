@@ -7,6 +7,7 @@ const About = () => {
   return (
     <section className="py-24">
       <div className="container mx-auto px-4 lg:px-10">
+        <div className="inner">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative">
             <img 
@@ -78,6 +79,7 @@ const About = () => {
             
             <button className="inline-flex items-center gap-2 px-9 py-4 rounded-full font-bold bg-[#3b82f6] text-white shadow-[0_10px_20px_rgba(59,130,246,0.3)] hover:bg-blue-600 transition-all duration-300 text-[17px]">Discover More ➔</button>
           </div>
+        </div>
         </div>
       </div>
     </section>

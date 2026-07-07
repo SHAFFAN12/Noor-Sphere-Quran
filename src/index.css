@@ -67,9 +67,14 @@
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 1560px;
   margin: 0 auto;
   padding: 0 40px;
+}
+
+.inner {
+  max-width: 1420px;
+  margin: 0 auto;
 }
 
 .btn {
