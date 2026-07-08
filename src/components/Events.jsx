@@ -33,7 +33,7 @@ const events = [
 
 const Events = () => {
   return (
-    <section className="py-24 bg-[#f4f9fd] text-center">
+    <section className="py-24 bg-[#F4FAFF] text-center">
       <div className="container mx-auto px-4 lg:px-10">
       <div className="inner">
         

@@ -6,9 +6,8 @@ const navLinks = [
   { label: 'Home', to: '/' },
   { label: 'About Us', to: '/about' },
   { label: 'Our Courses', to: '/courses' },
-  { label: 'Why Choose Us', to: '/#why' },
-  { label: 'Fee Structure', to: '/#pricing' },
-  { label: 'Contact', to: '/#contact' },
+  { label: 'Our Teachers', to: '/teachers' },
+  { label: 'Contact', to: '/contact' },
 ];
 
 const Header = () => {

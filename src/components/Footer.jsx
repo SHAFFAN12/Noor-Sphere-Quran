@@ -12,7 +12,7 @@ const Footer = () => {
             <div className="mb-6">
               <img src={logo} alt="Noor Sphere Logo" style={{ height: '70px', background: 'white', padding: '10px', borderRadius: '8px' }} />
             </div>
-            <p className="text-blue-100 text-sm leading-relaxed mb-8">
+            <p className="text-[#8FB9D4] text-sm leading-relaxed mb-8">
               Helping students of all ages around the world build a lifelong connection with the Holy Quran, anytime and anywhere.
             </p>
             <div className="flex gap-3">
@@ -24,7 +24,7 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="font-bold text-lg mb-6">Our Courses</h4>
+            <h4 className="text-white font-bold text-lg mb-6" style={{ fontFamily: "'Poppins', sans-serif" }}>Our Courses</h4>
             <ul className="flex flex-col gap-3">
               <li><a href="#" className="text-blue-100 text-sm hover:text-white hover:pl-2 transition-all block">Noorani Qaida</a></li>
               <li><a href="#" className="text-blue-100 text-sm hover:text-white hover:pl-2 transition-all block">Quran with Tajweed</a></li>
@@ -36,7 +36,7 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="font-bold text-lg mb-6">Quick Links</h4>
+            <h4 className="text-white font-bold text-lg mb-6" style={{ fontFamily: "'Poppins', sans-serif" }}>Quick Links</h4>
             <ul className="flex flex-col gap-3">
               <li><a href="#" className="text-blue-100 text-sm hover:text-white hover:pl-2 transition-all block">Home</a></li>
               <li><a href="#" className="text-blue-100 text-sm hover:text-white hover:pl-2 transition-all block">About Us</a></li>
@@ -46,7 +46,7 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="font-bold text-lg mb-6">Get In Touch</h4>
+            <h4 className="text-white font-bold text-lg mb-6" style={{ fontFamily: "'Poppins', sans-serif" }}>Get In Touch</h4>
             <ul className="flex flex-col gap-5">
               <li className="flex items-start gap-4 text-blue-100 text-sm">
                 <Mail size={18} className="shrink-0 text-[#6FB8EA] mt-1" />

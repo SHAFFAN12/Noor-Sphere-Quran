@@ -16,7 +16,7 @@ const Hero = () => {
       <div className="container relative z-20 flex items-center h-full py-16 w-full mx-auto px-4 lg:px-10">
         <div className="inner flex items-center w-full h-full">
         
-        <div className="w-[55%] pr-10 animate-fade-in">
+        <div className="w-[52%] pr-6 animate-fade-in">
           <div className="bg-white px-4 py-1.5 rounded-full inline-flex mb-5 border border-slate-200 text-[#1668A3] normal-case tracking-normal">
             <span className="mr-1.5">★</span> 3 Free Trial Classes — No Card Required
           </div>
@@ -37,7 +37,7 @@ const Hero = () => {
           
           <div className="flex gap-4 mb-10">
             <button className="bg-[#3b82f6] text-white px-7 py-3 rounded-full shadow-[0_10px_20px_rgba(59,130,246,0.3)] font-bold text-[14.5px] hover:bg-blue-600 transition-all duration-300">Book Free Trial Class ➔</button>
-            <button className="bg-transparent text-[#3b82f6] px-7 py-3 rounded-full border border-[#3b82f6] font-bold text-[14.5px] hover:bg-blue-50 transition-all duration-300">View Fee Structure</button>
+            <button className="bg-transparent text-[#3b82f6] px-7 py-3 rounded-full border border-[#3b82f6] font-bold text-[14.5px] hover:bg-blue-600 transition-all duration-300">View Fee Structure</button>
           </div>
           
           <div className="flex gap-6 text-base font-semibold text-[#0D3B5C] mt-12">
@@ -56,7 +56,7 @@ const Hero = () => {
           </div>
         </div>
         
-        <div className="w-full max-w-lg -ml-24 mr-auto bg-white border border-blue-100 rounded-3xl shadow-2xl p-8 flex flex-col relative z-30">
+        <div className="w-full max-w-lg -ml-6 bg-white border border-blue-100 rounded-3xl shadow-2xl p-8 flex flex-col relative z-30">
           <h3 className="text-3xl mb-1 text-[#0D3B5C] font-bold" style={{ fontFamily: "'Playfair Display', serif", letterSpacing: '-0.5px' }}>Start Your Free Trial</h3>
           <p className="text-sm text-slate-500 mb-6">Fill in your details to book 3 free classes</p>
           

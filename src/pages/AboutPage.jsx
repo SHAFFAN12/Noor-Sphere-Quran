@@ -65,72 +65,83 @@ const AboutPage = () => {
       <Header />
 
       {/* Hero */}
-      <section className="bg-[#edf2f7] pt-8 pb-12">
+      <section className="bg-gradient-to-r from-[#F4F9FD] to-[#FFFFFF] py-16 lg:py-20">
         <div className="container mx-auto px-4 lg:px-10">
           <div className="inner">
 
           {/* Breadcrumb */}
-          <div className="flex items-center gap-1.5 text-[12.5px] text-[#6a859c] mb-6">
-            <a href="/" className="hover:text-[#1668A3] transition-colors">Home</a>
-            <span className="text-[#b0c4d4]">/</span>
-            <span className="text-[#0D3B5C] font-medium">About Us</span>
+          <div className="flex items-center gap-2 text-[14px] mb-8">
+            <a href="/" className="text-[#6A859C] hover:text-[#1668A3] transition-colors font-medium">Home</a>
+            <span className="text-[#2F80ED] font-semibold">/</span>
+            <span className="text-[#0D3B5C] font-bold">About Us</span>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
             {/* Left: Text */}
             <div>
               <h1
-                className="font-bold text-[#0D3B5C] leading-[1.25] mb-4"
-                style={{ fontFamily: "'Playfair Display', serif", fontSize: '38px' }}
+                className="text-[#0B2545] font-extrabold leading-[1.2] mb-6 text-4xl md:text-5xl lg:text-[50px] tracking-tight"
+                style={{ fontFamily: "'Poppins', sans-serif" }}
               >
                 Rooted in the Quran.{' '}
-                <span className="italic" style={{ color: '#c9a227' }}>Built</span>
+                <span className="italic text-[#C9A227] font-serif font-medium" style={{ fontFamily: "'Playfair Display', serif" }}>
+                  Built
+                </span>
                 <br />
-                <span className="italic" style={{ color: '#c9a227' }}>for Every Home.</span>
+                <span className="italic text-[#C9A227] font-serif font-medium" style={{ fontFamily: "'Playfair Display', serif" }}>
+                  for Every Home.
+                </span>
               </h1>
 
-              <p className="text-[#6a859c] text-[14px] leading-[1.75] mb-6 max-w-[420px]">
+              <p className="text-[#6a859c] text-[15.5px] leading-[1.75] mb-10 max-w-[500px]">
                 We are a team of certified Quran teachers and Islamic educators helping
                 students of every age learn Quran recitation, Tajweed, and memorization
                 online, from wherever they call home.
               </p>
 
-              <div className="flex items-center gap-3 mb-8">
-                <button className="bg-[#3b82f6] text-white px-5 py-2.5 rounded-full font-semibold shadow-[0_6px_16px_rgba(59,130,246,0.35)] hover:bg-blue-600 transition-all duration-300 text-[13px]">
+              <div className="flex flex-wrap items-center gap-4 mb-14">
+                <button className="bg-[#2F80ED] text-white px-8 py-3.5 rounded-full font-bold shadow-[0_8px_20px_rgba(47,128,237,0.3)] hover:bg-blue-600 transition-all duration-300 text-[15px]">
                   Book Free Trial
                 </button>
-                <button className="bg-white text-[#0D3B5C] px-5 py-2.5 rounded-full border border-[#d1dfe9] font-semibold text-[13px] hover:bg-[#f4f8fb] transition-all duration-300">
+                <button className="bg-transparent text-[#0D3B5C] px-8 py-3.5 rounded-full border border-[#0D3B5C] font-bold text-[15px] hover:bg-[#0D3B5C]/5 transition-all duration-300">
                   Meet Our Teachers
                 </button>
               </div>
 
-              <div className="flex gap-8">
+              <div className="flex flex-wrap gap-8 md:gap-12">
                 {[
                   { value: '9+', label: 'Years of Teaching' },
                   { value: '50+', label: 'Certified Teachers' },
                   { value: '1500+', label: 'Students Worldwide' },
                 ].map((s) => (
-                  <div key={s.label}>
-                    <p
-                      className="font-bold text-[#0D3B5C] leading-none mb-1"
-                      style={{ fontFamily: "'Poppins', sans-serif", fontSize: '25px' }}
+                  <div key={s.label} className="flex flex-col min-w-max">
+                    <span
+                      className="font-bold text-[#0D3B5C] leading-none mb-2 text-[30px] md:text-[34px]"
+                      style={{ fontFamily: "'Poppins', sans-serif" }}
                     >
                       {s.value}
-                    </p>
-                    <p className="text-[#6a859c] text-[11px]">{s.label}</p>
+                    </span>
+                    <span className="text-[#6a859c] text-[13.5px] font-semibold whitespace-nowrap">
+                      {s.label}
+                    </span>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Right: Image with overlay card */}
-            <div className="relative rounded-[16px] overflow-hidden bg-[#edf2f7]" style={{ height: '360px' }}>
+            <div className="relative rounded-[24px] overflow-hidden shadow-xl h-[420px] lg:h-[480px]">
               <img
                 src={heroImage}
                 alt="Student learning Quran online"
-                className="w-full h-full object-contain object-center"
+                className="w-full h-full object-cover object-center"
               />
+              <div className="absolute bottom-6 right-6 max-w-[280px] bg-white/10 backdrop-blur-md border border-white/20 rounded-[16px] p-5 shadow-[0_10px_30px_rgba(0,0,0,0.15)]">
+                <p className="text-white text-[13.5px] leading-[1.6] font-medium">
+                  Live, one on one classes with certified Quran teachers, every day of the week.
+                </p>
+              </div>
             </div>
 
           </div>
@@ -139,10 +150,10 @@ const AboutPage = () => {
       </section>
 
       {/* Story Section */}
-      <section className="bg-[#f4f8fb] py-24">
+      <section className="bg-[#ffffff] py-24">
         <div className="container mx-auto px-4 lg:px-10">
           <div className="inner">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-[42%_58%] gap-12 lg:gap-16 items-start">
             <div className="relative">
               <img
                 src={largeImage}
@@ -164,7 +175,7 @@ const AboutPage = () => {
               </div>
             </div>
 
-            <div className="lg:pl-6">
+            <div className="lg:pl-0">
               <span className="text-[#2F80ED] font-bold text-sm tracking-[0.2em] uppercase block mb-5">Our Story</span>
               <h2
                 className="font-bold text-[30px] md:text-[36px] text-[#0D3B5C] leading-[1.2] mb-6"
@@ -249,7 +260,7 @@ const AboutPage = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="bg-[#f4f8fb] py-24">
+      <section className="bg-white py-24">
         <div className="container mx-auto px-4 lg:px-10">
           <div className="inner">
           <div className="text-center mb-16">
@@ -290,24 +301,24 @@ const AboutPage = () => {
       </section>
 
       {/* Stats */}
-      <section className="bg-[#0B2545] py-8">
+      <section className="bg-[#0B2545] py-12">
         <div className="container mx-auto px-4 lg:px-10">
           <div className="inner">
-          <div className="flex flex-col md:flex-row items-center justify-center divide-y md:divide-y-0 md:divide-x divide-white/20">
+          <div className="flex flex-col md:flex-row items-center justify-between divide-y md:divide-y-0 md:divide-x divide-white/20 w-full">
             {[
               { value: '1500+', label: 'Students Enrolled' },
               { value: '50+', label: 'Certified Teachers' },
               { value: '40+', label: 'Countries Reached' },
               { value: '10+', label: 'Years of Excellence' },
             ].map((stat) => (
-              <div key={stat.label} className="flex flex-col items-center py-5 md:py-0 md:px-16">
+              <div key={stat.label} className="flex flex-col items-center py-6 md:py-2 flex-1">
                 <p
-                  className="text-white font-bold leading-none mb-2"
-                  style={{ fontFamily: "'Poppins', sans-serif", fontSize: '28px' }}
+                  className="text-white font-bold leading-none mb-3 text-[36px] md:text-[44px]"
+                  style={{ fontFamily: "'Playfair Display', serif" }}
                 >
                   {stat.value}
                 </p>
-                <p className="text-blue-200 text-[13px]">{stat.label}</p>
+                <p className="text-blue-200 text-[14.5px] md:text-[15.5px] font-medium tracking-wide">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -366,7 +377,7 @@ const AboutPage = () => {
       <section className="bg-white py-16">
         <div className="container mx-auto px-4 lg:px-10">
           <div className="inner">
-          <div className="bg-[#0D3B5C] rounded-[20px] px-10 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="bg-[#0D3B5C] rounded-[20px] px-10 py-10 flex flex-col md:flex-row items-center justify-between gap-6 max-w-[1200px] mx-auto">
             <div>
               <h2
                 className="font-bold text-[22px] md:text-[26px] text-white leading-[1.35] mb-2"
@@ -378,7 +389,7 @@ const AboutPage = () => {
                 Book a free session and get matched with a certified teacher this week.
               </p>
             </div>
-            <button className="bg-[#3b82f6] text-white px-7 py-3.5 rounded-full font-semibold shadow-[0_6px_16px_rgba(59,130,246,0.4)] hover:bg-blue-500 transition-all duration-300 text-[14px] whitespace-nowrap">
+            <button className="bg-[#3b82f6] text-white px-7 py-3.5 rounded-full font-semibold shadow-[0_6px_16px_rgba(59,130,246,0.4)] hover:shadow-[0_12.29px_24.58px_-8.19px_rgba(47,128,237,0.5)] hover:bg-blue-500 transition-all duration-300 text-[14px] whitespace-nowrap">
               Book Your Free Trial
             </button>
           </div>
