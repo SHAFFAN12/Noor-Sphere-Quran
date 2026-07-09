@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone, Globe, MessageCircle, Share2, Video, Camera } from 'lucide-react';
+import { Mail, Phone, Globe } from 'lucide-react';
 import logo from '../assets/logo.png';
 
 const Footer = () => {
@@ -12,14 +12,14 @@ const Footer = () => {
             <div className="mb-6">
               <img src={logo} alt="Noor Sphere Logo" style={{ height: '70px', background: 'white', padding: '10px', borderRadius: '8px' }} />
             </div>
-            <p className="text-[#8FB9D4] text-sm leading-relaxed mb-8">
+            <p className="text-[#A9CCE3] text-sm leading-relaxed mb-8">
               Helping students of all ages around the world build a lifelong connection with the Holy Quran, anytime and anywhere.
             </p>
             <div className="flex gap-3">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#1668A3] hover:-translate-y-1 transition-all duration-300"><MessageCircle size={18} /></a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#1668A3] hover:-translate-y-1 transition-all duration-300"><Share2 size={18} /></a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#1668A3] hover:-translate-y-1 transition-all duration-300"><Video size={18} /></a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#1668A3] hover:-translate-y-1 transition-all duration-300"><Camera size={18} /></a>
+              <a href="#" className="w-10 h-10 rounded-full bg-[#1f3654] flex items-center justify-center text-[#A9CCE3] hover:bg-[#1668A3] hover:text-white hover:-translate-y-1 transition-all duration-300 text-[14px] font-semibold">f</a>
+              <a href="#" className="w-10 h-10 rounded-full bg-[#1f3654] flex items-center justify-center text-[#A9CCE3] hover:bg-[#1668A3] hover:text-white hover:-translate-y-1 transition-all duration-300 text-[12px] font-semibold">in</a>
+              <a href="#" className="w-10 h-10 rounded-full bg-[#1f3654] flex items-center justify-center text-[#A9CCE3] hover:bg-[#1668A3] hover:text-white hover:-translate-y-1 transition-all duration-300 text-[14px]">▷</a>
+              <a href="#" className="w-10 h-10 rounded-full bg-[#1f3654] flex items-center justify-center text-[#A9CCE3] hover:bg-[#1668A3] hover:text-white hover:-translate-y-1 transition-all duration-300 text-[15px]">@</a>
             </div>
           </div>
           

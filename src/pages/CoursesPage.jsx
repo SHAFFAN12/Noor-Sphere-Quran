@@ -468,7 +468,7 @@ const CoursesPage = () => {
       <section className="bg-white py-16">
         <div className="container mx-auto px-4 lg:px-10">
           <div className="inner">
-            <div className="bg-[#0D3B5C] rounded-[20px] px-10 py-10 flex flex-col md:flex-row items-center justify-between gap-6 max-w-[1200px] mx-auto shadow-xl">
+            <div className="bg-[#0D3B5C] rounded-[20px] px-6 py-8 md:px-10 md:py-10 flex flex-col md:flex-row items-center justify-between gap-6 max-w-[1200px] mx-auto shadow-xl text-center md:text-left">
               <div>
                 <h2
                   className="font-bold text-[22px] md:text-[26px] text-white leading-[1.35] mb-2"

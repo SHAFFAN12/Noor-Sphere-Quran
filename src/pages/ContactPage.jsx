@@ -1,26 +1,30 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { Phone, Mail, MapPin, MessageSquare, Plus, Minus } from 'lucide-react';
+import { MapPin, Plus, Minus } from 'lucide-react';
+import phoneIcon from '../assets/My work (57).png';
+import emailIcon from '../assets/My work (58).png';
+import locationIcon from '../assets/My work (59).png';
+import chatIcon from '../assets/My work (60).png';
 
 const contactInfo = [
   {
-    icon: Phone,
+    icon: phoneIcon,
     title: 'Call Us',
     value: '+1 (234) 567 890',
   },
   {
-    icon: Mail,
+    icon: emailIcon,
     title: 'Email Us',
     value: 'info@iquranacademy.com',
   },
   {
-    icon: MapPin,
+    icon: locationIcon,
     title: 'Our Office',
     value: '123 Islamic Center Road, Toronto, ON',
   },
   {
-    icon: MessageSquare,
+    icon: chatIcon,
     title: 'Live Chat',
     value: 'Available during office hours',
   },
@@ -122,8 +126,8 @@ const ContactPage = () => {
                   key={i}
                   className="bg-white p-8 rounded-[20px] border border-[#eaf4fa] shadow-[0_4px_15px_rgba(11,37,69,0.02)] flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
                 >
-                  <div className="w-[52px] h-[52px] bg-[#EAF5FC] rounded-2xl flex items-center justify-center text-[#1668A3] shadow-sm mb-6">
-                    <info.icon size={22} className="stroke-[2]" />
+                  <div className="w-[60px] h-[60px] flex items-center justify-center mb-6">
+                    <img src={info.icon} alt={info.title} className="w-full h-full object-contain" />
                   </div>
                   <h4
                     className="font-bold text-[#0D3B5C] text-[17px] mb-2"
@@ -147,7 +151,7 @@ const ContactPage = () => {
           <div className="inner max-w-[1200px] mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
               {/* Left Column: Form */}
-              <div className="lg:col-span-7 bg-white rounded-[24px] p-8 md:p-10 border border-[#eaf4fa] shadow-[0_10px_35px_rgba(11,37,69,0.05)]">
+              <div className="lg:col-span-7 bg-white rounded-[24px] p-8 md:p-10 border border-[#eaf4fa] shadow-[0px_20px_40px_-20px_#0B2545]">
                 <h3
                   className="text-2xl font-bold text-[#0D3B5C] mb-2"
                   style={{ fontFamily: "'Poppins', sans-serif" }}
@@ -377,7 +381,7 @@ const ContactPage = () => {
       <section className="bg-white py-16">
         <div className="container mx-auto px-4 lg:px-10">
           <div className="inner">
-            <div className="bg-[#0D3B5C] rounded-[20px] px-10 py-10 flex flex-col md:flex-row items-center justify-between gap-6 max-w-[1200px] mx-auto shadow-xl">
+            <div className="bg-[#0D3B5C] rounded-[20px] px-6 py-8 md:px-10 md:py-10 flex flex-col md:flex-row items-center justify-between gap-6 max-w-[1200px] mx-auto shadow-xl text-center md:text-left">
               <div>
                 <h2
                   className="font-bold text-[22px] md:text-[26px] text-white leading-[1.35] mb-2"

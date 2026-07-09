@@ -160,7 +160,7 @@ const AboutPage = () => {
                 alt="Online Quran learning"
                 className="rounded-[20px] w-full shadow-2xl max-h-[520px] object-cover"
               />
-              <div className="absolute -bottom-0 -left-18 bg-white rounded-[14px] px-5 py-4 shadow-[0_8px_24px_rgba(0,0,0,0.12)] flex items-center gap-4">
+              <div className="absolute bottom-4 left-4 lg:-bottom-0 lg:-left-[4.5rem] bg-white rounded-[14px] px-5 py-4 shadow-[0_8px_24px_rgba(0,0,0,0.12)] flex items-center gap-4">
                 <p
                   className="text-[#2F80ED] font-bold leading-none"
                   style={{ fontFamily: "'Poppins', sans-serif", fontSize: '28px' }}
@@ -377,7 +377,7 @@ const AboutPage = () => {
       <section className="bg-white py-16">
         <div className="container mx-auto px-4 lg:px-10">
           <div className="inner">
-          <div className="bg-[#0D3B5C] rounded-[20px] px-10 py-10 flex flex-col md:flex-row items-center justify-between gap-6 max-w-[1200px] mx-auto">
+          <div className="bg-[#0D3B5C] rounded-[20px] px-6 py-8 md:px-10 md:py-10 flex flex-col md:flex-row items-center justify-between gap-6 max-w-[1200px] mx-auto">
             <div>
               <h2
                 className="font-bold text-[22px] md:text-[26px] text-white leading-[1.35] mb-2"
