@@ -258,12 +258,12 @@ const CoursesPage = () => {
                       </div>
 
                       <h4
-                        className="font-bold text-[#0D3B5C] text-[20px] mb-3"
+                        className="font-bold text-[#0D3B5C] text-[20px] mb-3 text-center md:text-left"
                         style={{ fontFamily: "'Poppins', sans-serif" }}
                       >
                         {course.title}
                       </h4>
-                      <p className="text-[14.5px] text-[#6a859c] leading-[1.7] mb-8 min-h-[90px]">
+                      <p className="text-[14.5px] text-[#6a859c] leading-[1.7] mb-8 min-h-[90px] text-center md:text-left">
                         {course.desc}
                       </p>
                     </div>

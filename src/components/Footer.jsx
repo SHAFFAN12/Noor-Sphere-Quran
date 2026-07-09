@@ -7,64 +7,70 @@ const Footer = () => {
     <footer className="bg-[#0D3B5C] text-white pt-20 pb-8">
       <div className="container mx-auto px-4 lg:px-10">
         <div className="inner">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          <div>
-            <div className="mb-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-16">
+
+          {/* Logo + Socials */}
+          <div className="col-span-2 lg:col-span-1 text-center lg:text-left">
+            <div className="mb-6 flex justify-center lg:justify-start">
               <img src={logo} alt="Noor Sphere Logo" style={{ height: '70px', background: 'white', padding: '10px', borderRadius: '8px' }} />
             </div>
             <p className="text-[#A9CCE3] text-sm leading-relaxed mb-8">
               Helping students of all ages around the world build a lifelong connection with the Holy Quran, anytime and anywhere.
             </p>
-            <div className="flex gap-3">
+            <div className="flex gap-3 justify-center lg:justify-start">
               <a href="#" className="w-10 h-10 rounded-full bg-[#1f3654] flex items-center justify-center text-[#A9CCE3] hover:bg-[#1668A3] hover:text-white hover:-translate-y-1 transition-all duration-300 text-[14px] font-semibold">f</a>
               <a href="#" className="w-10 h-10 rounded-full bg-[#1f3654] flex items-center justify-center text-[#A9CCE3] hover:bg-[#1668A3] hover:text-white hover:-translate-y-1 transition-all duration-300 text-[12px] font-semibold">in</a>
               <a href="#" className="w-10 h-10 rounded-full bg-[#1f3654] flex items-center justify-center text-[#A9CCE3] hover:bg-[#1668A3] hover:text-white hover:-translate-y-1 transition-all duration-300 text-[14px]">▷</a>
               <a href="#" className="w-10 h-10 rounded-full bg-[#1f3654] flex items-center justify-center text-[#A9CCE3] hover:bg-[#1668A3] hover:text-white hover:-translate-y-1 transition-all duration-300 text-[15px]">@</a>
             </div>
           </div>
-          
-          <div>
+
+          {/* Our Courses */}
+          <div className="text-center lg:text-left">
             <h4 className="text-white font-bold text-lg mb-6" style={{ fontFamily: "'Poppins', sans-serif" }}>Our Courses</h4>
             <ul className="flex flex-col gap-3">
-              <li><a href="#" className="text-blue-100 text-sm hover:text-white hover:pl-2 transition-all block">Noorani Qaida</a></li>
-              <li><a href="#" className="text-blue-100 text-sm hover:text-white hover:pl-2 transition-all block">Quran with Tajweed</a></li>
-              <li><a href="#" className="text-blue-100 text-sm hover:text-white hover:pl-2 transition-all block">Memorizing Quran (Hifz)</a></li>
-              <li><a href="#" className="text-blue-100 text-sm hover:text-white hover:pl-2 transition-all block">Islamic Education</a></li>
-              <li><a href="#" className="text-blue-100 text-sm hover:text-white hover:pl-2 transition-all block">Complete Namaz (Salah)</a></li>
-              <li><a href="#" className="text-blue-100 text-sm hover:text-white hover:pl-2 transition-all block">Translation & Tafseer</a></li>
+              <li><a href="#" className="text-blue-100 text-sm hover:text-white transition-all block">Noorani Qaida</a></li>
+              <li><a href="#" className="text-blue-100 text-sm hover:text-white transition-all block">Quran with Tajweed</a></li>
+              <li><a href="#" className="text-blue-100 text-sm hover:text-white transition-all block">Memorizing Quran (Hifz)</a></li>
+              <li><a href="#" className="text-blue-100 text-sm hover:text-white transition-all block">Islamic Education</a></li>
+              <li><a href="#" className="text-blue-100 text-sm hover:text-white transition-all block">Complete Namaz (Salah)</a></li>
+              <li><a href="#" className="text-blue-100 text-sm hover:text-white transition-all block">Translation & Tafseer</a></li>
             </ul>
           </div>
-          
-          <div>
+
+          {/* Quick Links */}
+          <div className="text-center lg:text-left">
             <h4 className="text-white font-bold text-lg mb-6" style={{ fontFamily: "'Poppins', sans-serif" }}>Quick Links</h4>
             <ul className="flex flex-col gap-3">
-              <li><a href="#" className="text-blue-100 text-sm hover:text-white hover:pl-2 transition-all block">Home</a></li>
-              <li><a href="#" className="text-blue-100 text-sm hover:text-white hover:pl-2 transition-all block">About Us</a></li>
-              <li><a href="#" className="text-blue-100 text-sm hover:text-white hover:pl-2 transition-all block">Fee Structure</a></li>
-              <li><a href="#" className="text-blue-100 text-sm hover:text-white hover:pl-2 transition-all block">Contact Us</a></li>
+              <li><a href="#" className="text-blue-100 text-sm hover:text-white transition-all block">Home</a></li>
+              <li><a href="#" className="text-blue-100 text-sm hover:text-white transition-all block">About Us</a></li>
+              <li><a href="#" className="text-blue-100 text-sm hover:text-white transition-all block">Fee Structure</a></li>
+              <li><a href="#" className="text-blue-100 text-sm hover:text-white transition-all block">Contact Us</a></li>
             </ul>
           </div>
-          
-          <div>
+
+          {/* Get In Touch */}
+          <div className="col-span-2 lg:col-span-1 text-center lg:text-left">
             <h4 className="text-white font-bold text-lg mb-6" style={{ fontFamily: "'Poppins', sans-serif" }}>Get In Touch</h4>
-            <ul className="flex flex-col gap-5">
-              <li className="flex items-start gap-4 text-blue-100 text-sm">
+            <ul className="flex flex-col gap-5 items-center lg:items-start">
+              <li className="flex items-start gap-3 text-blue-100 text-sm">
                 <Mail size={18} className="shrink-0 text-[#6FB8EA] mt-1" />
                 <span>info@internationalquranicacademic.com</span>
               </li>
-              <li className="flex items-start gap-4 text-blue-100 text-sm">
+              <li className="flex items-start gap-3 text-blue-100 text-sm">
                 <Phone size={18} className="shrink-0 text-[#6FB8EA] mt-1" />
                 <span>+1 (774) 544-3187<br/>+1 (703) 845-8591</span>
               </li>
-              <li className="flex items-start gap-4 text-blue-100 text-sm">
+              <li className="flex items-start gap-3 text-blue-100 text-sm">
                 <Globe size={18} className="shrink-0 text-[#6FB8EA] mt-1" />
                 <span>internationalquranicacademic.com</span>
               </li>
             </ul>
           </div>
+
         </div>
-        
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-blue-200">
+
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-blue-200 text-center">
           <p>© 2026 International Quranic Academic. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>

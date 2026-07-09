@@ -1,7 +1,10 @@
 import React from 'react';
-import { GraduationCap, Globe, Users, CreditCard } from 'lucide-react';
 import largeImage from '../assets/large-image.jpg';
 import smallImage from '../assets/small-image.jpg';
+import certifiedIcon from '../assets/Qualified & Certified Teachers.png';
+import globalIcon from '../assets/Global Accessibility.png';
+import maleFemaleIcon from '../assets/male-and-female-about.png';
+import affordableIcon from '../assets/affordable-plans.png';
 
 const About = () => {
   return (
@@ -41,36 +44,36 @@ const About = () => {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-8 mb-10">
               {/* Card 1 */}
-              <div className="bg-[#EAF5FC] p-7 rounded-[20px] border border-white/50">
-                <div className="bg-white w-12 h-12 rounded-[14px] flex items-center justify-center shadow-sm mb-5 text-[22px]">
-                  🎓
+              <div className="bg-[#EAF5FC] p-7 rounded-[20px] border border-white/50 flex flex-col items-center text-center lg:items-start lg:text-left">
+                <div className="w-12 h-12 mb-5">
+                  <img src={certifiedIcon} alt="Certified Teachers" className="w-full h-full object-contain" />
                 </div>
                 <h4 className="font-bold text-[#0D3B5C] mb-3 text-[17px]" style={{ fontFamily: "'Poppins', sans-serif" }}>Qualified & Certified Teachers</h4>
                 <p className="text-[14.5px] text-[#6a859c] leading-[1.6]">Certified Quran instructors with deep knowledge of Tajweed & Tafseer</p>
               </div>
-              
+
               {/* Card 2 */}
-              <div className="bg-[#eaf4fa] p-7 rounded-[20px] border border-white/50">
-                <div className="bg-white w-12 h-12 rounded-[14px] flex items-center justify-center shadow-sm mb-5 text-[22px]">
-                  🌐
+              <div className="bg-[#eaf4fa] p-7 rounded-[20px] border border-white/50 flex flex-col items-center text-center lg:items-start lg:text-left">
+                <div className="w-12 h-12 mb-5">
+                  <img src={globalIcon} alt="Global Accessibility" className="w-full h-full object-contain" />
                 </div>
                 <h4 className="font-bold text-[#0D3B5C] mb-3 text-[17px]" style={{ fontFamily: "'Poppins', sans-serif" }}>Global Accessibility</h4>
                 <p className="text-[14.5px] text-[#6a859c] leading-[1.6]">Study from anywhere with flexible schedules that fit your lifestyle</p>
               </div>
-              
+
               {/* Card 3 */}
-              <div className="bg-[#eaf4fa] p-7 rounded-[20px] border border-white/50">
-                <div className="bg-white w-12 h-12 rounded-[14px] flex items-center justify-center shadow-sm mb-5 text-[22px]">
-                  👫
+              <div className="bg-[#eaf4fa] p-7 rounded-[20px] border border-white/50 flex flex-col items-center text-center lg:items-start lg:text-left">
+                <div className="w-12 h-12 mb-5">
+                  <img src={maleFemaleIcon} alt="Male & Female Tutors" className="w-full h-full object-contain" />
                 </div>
                 <h4 className="font-bold text-[#0D3B5C] mb-3 text-[17px]" style={{ fontFamily: "'Poppins', sans-serif" }}>Male & Female Tutors</h4>
                 <p className="text-[14.5px] text-[#6a859c] leading-[1.6]">Professional tutors ensuring comfort and trust for every student</p>
               </div>
-              
+
               {/* Card 4 */}
-              <div className="bg-[#eaf4fa] p-7 rounded-[20px] border border-white/50">
-                <div className="bg-white w-12 h-12 rounded-[14px] flex items-center justify-center shadow-sm mb-5 text-[22px]">
-                  💳
+              <div className="bg-[#eaf4fa] p-7 rounded-[20px] border border-white/50 flex flex-col items-center text-center lg:items-start lg:text-left">
+                <div className="w-12 h-12 mb-5">
+                  <img src={affordableIcon} alt="Affordable Plans" className="w-full h-full object-contain" />
                 </div>
                 <h4 className="font-bold text-[#0D3B5C] mb-3 text-[17px]" style={{ fontFamily: "'Poppins', sans-serif" }}>Affordable Plans</h4>
                 <p className="text-[14.5px] text-[#6a859c] leading-[1.6]">Quality learning without financial burden with flexible fee plans</p>

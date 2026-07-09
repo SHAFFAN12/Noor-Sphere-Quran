@@ -240,7 +240,7 @@ const TeachersPage = () => {
                     </div>
 
                     {/* Content */}
-                    <div className="p-8 pb-4">
+                    <div className="p-8 pb-4 text-center md:text-left">
                       <h4
                         className="font-bold text-[#0D3B5C] text-[21px] mb-1"
                         style={{ fontFamily: "'Poppins', sans-serif" }}
@@ -252,7 +252,7 @@ const TeachersPage = () => {
                       </p>
 
                       {/* Specialties */}
-                      <div className="flex flex-wrap gap-2 mb-5">
+                      <div className="flex flex-wrap gap-2 mb-5 justify-center md:justify-start">
                         {teacher.specialties.map((spec) => (
                           <span key={spec} className="px-3 py-1 bg-[#EAF5FC] text-[#1668A3] text-[12px] font-bold rounded-md">
                             {spec}
@@ -268,7 +268,7 @@ const TeachersPage = () => {
 
                   {/* Footer Meta & Button */}
                   <div className="px-8 pb-8">
-                    <div className="flex items-center justify-between pt-5 border-t border-slate-100 mb-6 text-[13.5px] text-[#6a859c] font-medium">
+                    <div className="flex flex-wrap items-center justify-between gap-2 pt-5 border-t border-slate-100 mb-6 text-[13.5px] text-[#6a859c] font-medium">
                       <span>
                         <strong className="text-[#0D3B5C]">Experience:</strong> {teacher.experience}
                       </span>

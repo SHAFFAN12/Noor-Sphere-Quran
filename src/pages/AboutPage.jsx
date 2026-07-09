@@ -79,18 +79,15 @@ const AboutPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
             {/* Left: Text */}
-            <div>
+            <div className="text-center lg:text-left">
               <h1
                 className="text-[#0B2545] font-extrabold leading-[1.2] mb-6 text-4xl md:text-5xl lg:text-[50px] tracking-tight"
                 style={{ fontFamily: "'Poppins', sans-serif" }}
               >
                 Rooted in the Quran.{' '}
+                
                 <span className="italic text-[#C9A227] font-serif font-medium" style={{ fontFamily: "'Playfair Display', serif" }}>
-                  Built
-                </span>
-                <br />
-                <span className="italic text-[#C9A227] font-serif font-medium" style={{ fontFamily: "'Playfair Display', serif" }}>
-                  for Every Home.
+                  Built for Every Home.
                 </span>
               </h1>
 
@@ -100,7 +97,7 @@ const AboutPage = () => {
                 online, from wherever they call home.
               </p>
 
-              <div className="flex flex-wrap items-center gap-4 mb-14">
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-14">
                 <button className="bg-[#2F80ED] text-white px-8 py-3.5 rounded-full font-bold shadow-[0_8px_20px_rgba(47,128,237,0.3)] hover:bg-blue-600 transition-all duration-300 text-[15px]">
                   Book Free Trial
                 </button>
@@ -109,7 +106,7 @@ const AboutPage = () => {
                 </button>
               </div>
 
-              <div className="flex flex-wrap gap-8 md:gap-12">
+              <div className="flex flex-wrap justify-center lg:justify-start gap-8 md:gap-12">
                 {[
                   { value: '9+', label: 'Years of Teaching' },
                   { value: '50+', label: 'Certified Teachers' },
@@ -160,7 +157,7 @@ const AboutPage = () => {
                 alt="Online Quran learning"
                 className="rounded-[20px] w-full shadow-2xl max-h-[520px] object-cover"
               />
-              <div className="absolute bottom-4 left-4 lg:-bottom-0 lg:-left-[4.5rem] bg-white rounded-[14px] px-5 py-4 shadow-[0_8px_24px_rgba(0,0,0,0.12)] flex items-center gap-4">
+              <div className="absolute bottom-4 left-4 xl:-bottom-0 xl:-left-[4.5rem] bg-white rounded-[14px] px-5 py-4 shadow-[0_8px_24px_rgba(0,0,0,0.12)] flex items-center gap-4">
                 <p
                   className="text-[#2F80ED] font-bold leading-none"
                   style={{ fontFamily: "'Poppins', sans-serif", fontSize: '28px' }}
@@ -175,7 +172,7 @@ const AboutPage = () => {
               </div>
             </div>
 
-            <div className="lg:pl-0">
+            <div className="lg:pl-0 text-center lg:text-left">
               <span className="text-[#2F80ED] font-bold text-sm tracking-[0.2em] uppercase block mb-5">Our Story</span>
               <h2
                 className="font-bold text-[30px] md:text-[36px] text-[#0D3B5C] leading-[1.2] mb-6"
@@ -228,7 +225,7 @@ const AboutPage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1000px] mx-auto">
-            <div className="p-8 rounded-[20px] bg-white shadow-sm border-t-4 border-[#1668A3] transition-shadow duration-300 hover:shadow-[0_20.4px_40.8px_-20.4px_rgba(11,37,69,0.25)]">
+            <div className="p-8 rounded-[20px] bg-white shadow-sm border-t-4 border-[#1668A3] transition-shadow duration-300 hover:shadow-[0_20.4px_40.8px_-20.4px_rgba(11,37,69,0.25)] text-center md:text-left">
               <h3
                 className="font-bold text-[18px] text-[#0D3B5C] mb-3"
                 style={{ fontFamily: "'Poppins', sans-serif" }}
@@ -242,7 +239,7 @@ const AboutPage = () => {
               </p>
             </div>
 
-            <div className="p-8 rounded-[20px] bg-white shadow-sm border-t-4 border-[#c9a227] transition-shadow duration-300 hover:shadow-[0_20.4px_40.8px_-20.4px_rgba(11,37,69,0.25)]">
+            <div className="p-8 rounded-[20px] bg-white shadow-sm border-t-4 border-[#c9a227] transition-shadow duration-300 hover:shadow-[0_20.4px_40.8px_-20.4px_rgba(11,37,69,0.25)] text-center md:text-left">
               <h3
                 className="font-bold text-[18px] text-[#0D3B5C] mb-3"
                 style={{ fontFamily: "'Poppins', sans-serif" }}
@@ -281,7 +278,7 @@ const AboutPage = () => {
             {whyChooseUs.map((item) => (
               <div
                 key={item.title}
-                className="bg-white p-8 rounded-[20px] border border-[#dceef7] hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+                className="bg-white p-8 rounded-[20px] border border-[#dceef7] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center lg:items-start lg:text-left"
               >
                 <div className="w-12 h-12 mb-6">
                   <img src={item.icon} alt={item.title} className="w-full h-full object-contain" />
@@ -304,14 +301,14 @@ const AboutPage = () => {
       <section className="bg-[#0B2545] py-12">
         <div className="container mx-auto px-4 lg:px-10">
           <div className="inner">
-          <div className="flex flex-col md:flex-row items-center justify-between divide-y md:divide-y-0 md:divide-x divide-white/20 w-full">
+          <div className="flex flex-col md:flex-row md:items-center justify-between divide-y md:divide-y-0 md:divide-x divide-white/20 w-full">
             {[
               { value: '1500+', label: 'Students Enrolled' },
               { value: '50+', label: 'Certified Teachers' },
               { value: '40+', label: 'Countries Reached' },
               { value: '10+', label: 'Years of Excellence' },
             ].map((stat) => (
-              <div key={stat.label} className="flex flex-col items-center py-6 md:py-2 flex-1">
+              <div key={stat.label} className="flex flex-col items-center py-6 md:py-2 flex-1 w-full">
                 <p
                   className="text-white font-bold leading-none mb-3 text-[36px] md:text-[44px]"
                   style={{ fontFamily: "'Playfair Display', serif" }}
@@ -354,7 +351,7 @@ const AboutPage = () => {
                 <div className="h-[340px] overflow-hidden">
                   <img src={member.img} alt={member.name} className="w-full h-full object-cover object-top" />
                 </div>
-                <div className="p-6">
+                <div className="p-6 text-center md:text-left">
                   <h4
                     className="font-bold text-[#0D3B5C] text-[17px] mb-1"
                     style={{ fontFamily: "'Poppins', sans-serif" }}
@@ -377,7 +374,7 @@ const AboutPage = () => {
       <section className="bg-white py-16">
         <div className="container mx-auto px-4 lg:px-10">
           <div className="inner">
-          <div className="bg-[#0D3B5C] rounded-[20px] px-6 py-8 md:px-10 md:py-10 flex flex-col md:flex-row items-center justify-between gap-6 max-w-[1200px] mx-auto">
+          <div className="bg-[#0D3B5C] rounded-[20px] px-6 py-8 md:px-10 md:py-10 flex flex-col md:flex-row items-center justify-between gap-6 max-w-[1200px] mx-auto text-center md:text-left">
             <div>
               <h2
                 className="font-bold text-[22px] md:text-[26px] text-white leading-[1.35] mb-2"
