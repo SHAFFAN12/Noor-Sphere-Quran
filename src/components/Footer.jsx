@@ -78,6 +78,17 @@ const Footer = () => {
             <a href="#" className="hover:text-white transition-colors">Partnerships</a>
           </div>
         </div>
+        <div className="pt-4 text-center text-xs text-blue-300">
+          Made by{' '}
+          <a
+            href="https://muhammad-shaffan-portfolio.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#6FB8EA] hover:text-white transition-colors font-medium"
+          >
+            Shaffan
+          </a>
+        </div>
         </div>
       </div>
     </footer>
