@@ -70,7 +70,9 @@ const Footer = () => {
               </li>
               <li className="flex items-start gap-3 text-blue-100 text-sm">
                 <Globe size={18} className="shrink-0 text-[#6FB8EA] mt-1" />
-                <span>internationalquranicacademic.com</span>
+                <a href="https://noorspherequran.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                  noorspherequran.com
+                </a>
               </li>
             </ul>
           </div>
@@ -78,23 +80,23 @@ const Footer = () => {
         </div>
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-blue-200 text-center">
-          <p>© 2026 International Quranic Academic. All rights reserved.</p>
+          <p>© 2026 Noor Sphere Quran. All rights reserved.</p>
+          <p className="text-xs text-blue-300">
+            Made by{' '}
+            <a
+              href="https://muhammad-shaffan-portfolio.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#6FB8EA] hover:text-white transition-colors font-medium"
+            >
+              Muhammad Shaffan
+            </a>
+          </p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms & Conditions</a>
-            <a href="#" className="hover:text-white transition-colors">Partnerships</a>
+            <span>Privacy Policy</span>
+            <span>Terms & Conditions</span>
+            <span>Partnerships</span>
           </div>
-        </div>
-        <div className="pt-4 text-center text-xs text-blue-300">
-          Made by{' '}
-          <a
-            href="https://muhammad-shaffan-portfolio.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[#6FB8EA] hover:text-white transition-colors font-medium"
-          >
-            Shaffan
-          </a>
         </div>
         </div>
       </div>
