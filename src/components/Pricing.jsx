@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Check } from 'lucide-react';
 
 const Pricing = () => {
@@ -30,7 +31,7 @@ const Pricing = () => {
               <li className="flex items-start gap-3 leading-snug"><Check size={16} className="text-[#1668A3] group-hover:text-white shrink-0 mt-0.5 transition-colors duration-300" /> 30 Minutes per Class</li>
               <li className="flex items-start gap-3 leading-snug"><Check size={16} className="text-[#1668A3] group-hover:text-white shrink-0 mt-0.5 transition-colors duration-300" /> Monthly Progress Report</li>
             </ul>
-            <button className="w-full py-3.5 rounded-full border border-[#7fb8e1] text-[#1668A3] font-bold text-[14.5px] text-center group-hover:bg-white group-hover:text-[#0D3B5C] group-hover:border-white transition-all duration-300">Enroll Now</button>
+            <Link to="/contact" className="w-full py-3.5 rounded-full border border-[#7fb8e1] text-[#1668A3] font-bold text-[14.5px] text-center group-hover:bg-white group-hover:text-[#0D3B5C] group-hover:border-white transition-all duration-300 inline-block">Enroll Now</Link>
           </div>
           
           {/* Plan 2 - Popular */}
@@ -44,7 +45,7 @@ const Pricing = () => {
               <li className="flex items-start gap-3 leading-snug"><Check size={16} className="text-white shrink-0 mt-0.5" /> Monthly Progress Report</li>
               <li className="flex items-start gap-3 leading-snug"><Check size={16} className="text-white shrink-0 mt-0.5" /> Feedback Session Included</li>
             </ul>
-            <button className="w-full py-3.5 rounded-full bg-white text-[#0D3B5C] font-bold text-[14.5px] text-center hover:bg-slate-100 transition-all duration-300">Enroll Now</button>
+            <Link to="/contact" className="w-full py-3.5 rounded-full bg-white text-[#0D3B5C] font-bold text-[14.5px] text-center hover:bg-slate-100 transition-all duration-300 inline-block">Enroll Now</Link>
           </div>
           
           {/* Plan 3 */}
@@ -57,7 +58,7 @@ const Pricing = () => {
               <li className="flex items-start gap-3 leading-snug"><Check size={16} className="text-[#1668A3] group-hover:text-white shrink-0 mt-0.5 transition-colors duration-300" /> Dedicated Teacher Support</li>
               <li className="flex items-start gap-3 leading-snug"><Check size={16} className="text-[#1668A3] group-hover:text-white shrink-0 mt-0.5 transition-colors duration-300" /> Bi-Monthly Progress Evaluation</li>
             </ul>
-            <button className="w-full py-3.5 rounded-full border border-[#7fb8e1] text-[#1668A3] font-bold text-[14.5px] text-center group-hover:bg-white group-hover:text-[#0D3B5C] group-hover:border-white transition-all duration-300">Enroll Now</button>
+            <Link to="/contact" className="w-full py-3.5 rounded-full border border-[#7fb8e1] text-[#1668A3] font-bold text-[14.5px] text-center group-hover:bg-white group-hover:text-[#0D3B5C] group-hover:border-white transition-all duration-300 inline-block">Enroll Now</Link>
           </div>
           
           {/* Plan 4 */}
@@ -70,7 +71,7 @@ const Pricing = () => {
               <li className="flex items-start gap-3 leading-snug"><Check size={16} className="text-[#1668A3] group-hover:text-white shrink-0 mt-0.5 transition-colors duration-300" /> Dedicated Teacher + Flexible Timing</li>
               <li className="flex items-start gap-3 leading-snug"><Check size={16} className="text-[#1668A3] group-hover:text-white shrink-0 mt-0.5 transition-colors duration-300" /> Monthly Parent Review Session</li>
             </ul>
-            <button className="w-full py-3.5 rounded-full border border-[#7fb8e1] text-[#1668A3] font-bold text-[14.5px] text-center group-hover:bg-white group-hover:text-[#0D3B5C] group-hover:border-white transition-all duration-300">Enroll Now</button>
+            <Link to="/contact" className="w-full py-3.5 rounded-full border border-[#7fb8e1] text-[#1668A3] font-bold text-[14.5px] text-center group-hover:bg-white group-hover:text-[#0D3B5C] group-hover:border-white transition-all duration-300 inline-block">Enroll Now</Link>
           </div>
         </div>
         </div>

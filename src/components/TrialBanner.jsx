@@ -1,7 +1,64 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Check } from 'lucide-react';
 
 const TrialBanner = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    course: '',
+    preferredTime: '',
+  });
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setErrorMsg('');
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          formType: 'Trial Banner Application Form',
+          name: `${formData.firstName} ${formData.lastName}`.trim(),
+          email: formData.email,
+          phone: formData.phone,
+          course: formData.course,
+          preferredTime: formData.preferredTime,
+        }),
+      });
+      const resData = await response.json();
+      if (resData.success) {
+        setSubmitted(true);
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          course: '',
+          preferredTime: '',
+        });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        setErrorMsg(resData.error || 'Failed to submit application. Please try again.');
+      }
+    } catch (err) {
+      console.error(err);
+      setErrorMsg('Failed to connect to server. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section className="py-24 bg-white">
       <div className="container mx-auto px-4 lg:px-10">
@@ -55,40 +112,102 @@ const TrialBanner = () => {
               </li>
             </ul>
             
-            <button className="inline-block mt-2 px-9 py-4 rounded-full font-bold bg-[#3b82f6] text-white shadow-[0_10px_20px_rgba(59,130,246,0.3)] hover:bg-blue-600 transition-all duration-300 text-[14.5px]">Book Your Free Trial Now ➔</button>
+            <Link to="/contact" className="inline-block mt-2 px-9 py-4 rounded-full font-bold bg-[#3b82f6] text-white shadow-[0_10px_20px_rgba(59,130,246,0.3)] hover:bg-blue-600 transition-all duration-300 text-[14.5px]">Book Your Free Trial Now ➔</Link>
           </div>
           
           <div className="bg-[#0f2e4c] p-8 md:p-10 rounded-[24px] shadow-2xl">
             <h3 className="text-xl font-bold text-white mb-8 font-serif flex items-center gap-2.5">
               <span role="img" aria-label="clipboard">📋</span> Register for Free Trial
             </h3>
-            <form onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-4">
-              <div>
-                <input type="text" className="w-full bg-[#1b436b] border border-white/10 p-3.5 rounded-lg text-white outline-none focus:border-[#3b82f6] focus:ring-1 focus:ring-[#3b82f6] transition-all text-[13.5px] placeholder:text-white/60" placeholder="First Name" />
+
+            {submitted ? (
+              <div className="bg-blue-900/50 border border-blue-400 text-white p-6 rounded-xl text-center text-sm font-medium">
+                ✓ Application sent successfully! We will contact you shortly via noorspherequran@gmail.com.
               </div>
-              <div>
-                <input type="text" className="w-full bg-[#1b436b] border border-white/10 p-3.5 rounded-lg text-white outline-none focus:border-[#3b82f6] focus:ring-1 focus:ring-[#3b82f6] transition-all text-[13.5px] placeholder:text-white/60" placeholder="Last Name" />
-              </div>
-              <div>
-                <input type="email" className="w-full bg-[#1b436b] border border-white/10 p-3.5 rounded-lg text-white outline-none focus:border-[#3b82f6] focus:ring-1 focus:ring-[#3b82f6] transition-all text-[13.5px] placeholder:text-white/60" placeholder="Email Address" />
-              </div>
-              <div>
-                <input type="tel" className="w-full bg-[#1b436b] border border-white/10 p-3.5 rounded-lg text-white outline-none focus:border-[#3b82f6] focus:ring-1 focus:ring-[#3b82f6] transition-all text-[13.5px] placeholder:text-white/60" placeholder="WhatsApp / Contact Number" />
-              </div>
-              <div className="relative">
-                <select className="w-full bg-[#1b436b] border border-white/10 p-3.5 rounded-lg text-white outline-none focus:border-[#3b82f6] focus:ring-1 focus:ring-[#3b82f6] transition-all text-[13.5px] appearance-none">
-                  <option value="" className="text-white/60">Select a Course</option>
-                  <option value="qaida" className="text-slate-800">Noorani Qaida</option>
-                  <option value="quran" className="text-slate-800">Quran Reading</option>
-                  <option value="hifz" className="text-slate-800">Memorization (Hifz)</option>
-                </select>
-              </div>
-              <div>
-                <input type="text" className="w-full bg-[#1b436b] border border-white/10 p-3.5 rounded-lg text-white outline-none focus:border-[#3b82f6] focus:ring-1 focus:ring-[#3b82f6] transition-all text-[13.5px] placeholder:text-white/60" placeholder="Preferred Time / Timezone" />
-              </div>
-              
-              <button className="w-full py-4 mt-3 rounded-full font-bold bg-[#3b82f6] text-white shadow-[0_10px_20px_rgba(59,130,246,0.3)] hover:bg-blue-600 transition-all duration-300 text-[14.5px]">Send My Application ➔</button>
-            </form>
+            ) : (
+              <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                {errorMsg && (
+                  <div className="bg-red-900/50 border border-red-400 text-red-200 text-xs p-3 rounded-lg">
+                    {errorMsg}
+                  </div>
+                )}
+                <div>
+                  <input
+                    type="text"
+                    name="firstName"
+                    required
+                    value={formData.firstName}
+                    onChange={handleChange}
+                    className="w-full bg-[#1b436b] border border-white/10 p-3.5 rounded-lg text-white outline-none focus:border-[#3b82f6] focus:ring-1 focus:ring-[#3b82f6] transition-all text-[13.5px] placeholder:text-white/60"
+                    placeholder="First Name"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    name="lastName"
+                    required
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    className="w-full bg-[#1b436b] border border-white/10 p-3.5 rounded-lg text-white outline-none focus:border-[#3b82f6] focus:ring-1 focus:ring-[#3b82f6] transition-all text-[13.5px] placeholder:text-white/60"
+                    placeholder="Last Name"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full bg-[#1b436b] border border-white/10 p-3.5 rounded-lg text-white outline-none focus:border-[#3b82f6] focus:ring-1 focus:ring-[#3b82f6] transition-all text-[13.5px] placeholder:text-white/60"
+                    placeholder="Email Address"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="tel"
+                    name="phone"
+                    required
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full bg-[#1b436b] border border-white/10 p-3.5 rounded-lg text-white outline-none focus:border-[#3b82f6] focus:ring-1 focus:ring-[#3b82f6] transition-all text-[13.5px] placeholder:text-white/60"
+                    placeholder="WhatsApp / Contact Number"
+                  />
+                </div>
+                <div className="relative">
+                  <select
+                    name="course"
+                    value={formData.course}
+                    onChange={handleChange}
+                    className="w-full bg-[#1b436b] border border-white/10 p-3.5 rounded-lg text-white outline-none focus:border-[#3b82f6] focus:ring-1 focus:ring-[#3b82f6] transition-all text-[13.5px] appearance-none"
+                  >
+                    <option value="" className="text-white/60">Select a Course</option>
+                    <option value="Noorani Qaida" className="text-slate-800">Noorani Qaida</option>
+                    <option value="Quran Reading with Tajweed" className="text-slate-800">Quran Reading</option>
+                    <option value="Memorization (Hifz)" className="text-slate-800">Memorization (Hifz)</option>
+                  </select>
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    name="preferredTime"
+                    value={formData.preferredTime}
+                    onChange={handleChange}
+                    className="w-full bg-[#1b436b] border border-white/10 p-3.5 rounded-lg text-white outline-none focus:border-[#3b82f6] focus:ring-1 focus:ring-[#3b82f6] transition-all text-[13.5px] placeholder:text-white/60"
+                    placeholder="Preferred Time / Timezone"
+                  />
+                </div>
+                
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full py-4 mt-3 rounded-full font-bold bg-[#3b82f6] text-white shadow-[0_10px_20px_rgba(59,130,246,0.3)] hover:bg-blue-600 transition-all duration-300 text-[14.5px] disabled:opacity-50"
+                >
+                  {loading ? 'Sending...' : 'Send My Application ➔'}
+                </button>
+              </form>
+            )}
           </div>
         </div>
       </div>

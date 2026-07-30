@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import largeImage from '../assets/large-image.jpg';
 import smallImage from '../assets/small-image.jpg';
 import certifiedIcon from '../assets/Qualified & Certified Teachers.png';
@@ -81,7 +82,7 @@ const About = () => {
             </div>
             
             <div className="flex justify-center lg:justify-start">
-              <button className="inline-flex items-center gap-2 px-9 py-4 rounded-full font-bold bg-[#3b82f6] text-white shadow-[0_10px_20px_rgba(59,130,246,0.3)] hover:bg-blue-600 transition-all duration-300 text-[17px]">Discover More ➔</button>
+              <Link to="/contact" className="inline-flex items-center gap-2 px-9 py-4 rounded-full font-bold bg-[#3b82f6] text-white shadow-[0_10px_20px_rgba(59,130,246,0.3)] hover:bg-blue-600 transition-all duration-300 text-[17px]">Discover More ➔</Link>
             </div>
           </div>
         </div>

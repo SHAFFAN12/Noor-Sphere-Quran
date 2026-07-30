@@ -1,8 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import heroImage from '../assets/hero-about.png';
-import aboutImage from '../assets/male-and-female-about.png';
 import largeImage from '../assets/about-section-2.png';
 import iconCertified from '../assets/Certified Teachers.png';
 import iconScheduling from '../assets/Flexible Scheduling.png';
@@ -71,7 +71,7 @@ const AboutPage = () => {
 
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 text-[14px] mb-8">
-            <a href="/" className="text-[#6A859C] hover:text-[#1668A3] transition-colors font-medium">Home</a>
+            <Link to="/" className="text-[#6A859C] hover:text-[#1668A3] transition-colors font-medium">Home</Link>
             <span className="text-[#2F80ED] font-semibold">/</span>
             <span className="text-[#0D3B5C] font-bold">About Us</span>
           </div>
@@ -98,12 +98,12 @@ const AboutPage = () => {
               </p>
 
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-14">
-                <button className="bg-[#2F80ED] text-white px-8 py-3.5 rounded-full font-bold shadow-[0_8px_20px_rgba(47,128,237,0.3)] hover:bg-blue-600 transition-all duration-300 text-[15px]">
+                <Link to="/contact" className="bg-[#2F80ED] text-white px-8 py-3.5 rounded-full font-bold shadow-[0_8px_20px_rgba(47,128,237,0.3)] hover:bg-blue-600 transition-all duration-300 text-[15px] inline-block">
                   Book Free Trial
-                </button>
-                <button className="bg-transparent text-[#0D3B5C] px-8 py-3.5 rounded-full border border-[#0D3B5C] font-bold text-[15px] hover:bg-[#0D3B5C]/5 transition-all duration-300">
+                </Link>
+                <Link to="/teachers" className="bg-transparent text-[#0D3B5C] px-8 py-3.5 rounded-full border border-[#0D3B5C] font-bold text-[15px] hover:bg-[#0D3B5C]/5 transition-all duration-300 inline-block">
                   Meet Our Teachers
-                </button>
+                </Link>
               </div>
 
               <div className="flex flex-wrap justify-center lg:justify-start gap-8 md:gap-12">
@@ -167,8 +167,6 @@ const AboutPage = () => {
                 <p className="text-[#6a859c] text-[12px] leading-[1.4] max-w-[100px]">
                   Countries reached through online classes
                 </p>
-
-
               </div>
             </div>
 
@@ -386,9 +384,9 @@ const AboutPage = () => {
                 Book a free session and get matched with a certified teacher this week.
               </p>
             </div>
-            <button className="bg-[#3b82f6] text-white px-7 py-3.5 rounded-full font-semibold shadow-[0_6px_16px_rgba(59,130,246,0.4)] hover:shadow-[0_12.29px_24.58px_-8.19px_rgba(47,128,237,0.5)] hover:bg-blue-500 transition-all duration-300 text-[14px] whitespace-nowrap">
+            <Link to="/contact" className="bg-[#3b82f6] text-white px-7 py-3.5 rounded-full font-semibold shadow-[0_6px_16px_rgba(59,130,246,0.4)] hover:shadow-[0_12.29px_24.58px_-8.19px_rgba(47,128,237,0.5)] hover:bg-blue-500 transition-all duration-300 text-[14px] whitespace-nowrap inline-block">
               Book Your Free Trial
-            </button>
+            </Link>
           </div>
           </div>
         </div>

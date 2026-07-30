@@ -11,12 +11,12 @@ const contactInfo = [
   {
     icon: phoneIcon,
     title: 'Call Us',
-    value: '+1 (234) 567 890',
+    value: '0370 8694049 / 0346 7925130',
   },
   {
     icon: emailIcon,
     title: 'Email Us',
-    value: 'info@iquranacademy.com',
+    value: 'noorspherequran@gmail.com',
   },
   {
     icon: locationIcon,
@@ -64,16 +64,64 @@ const faqData = [
 
 const ContactPage = () => {
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    cityCountry: '',
+    course: '',
+    age: '',
+    message: '',
+  });
+  const [loading, setLoading] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
 
   const toggleFaq = (index) => {
     setOpenFaqIndex(openFaqIndex === index ? -1 : index);
   };
 
-  const handleSubmit = (e) => {
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setFormSubmitted(true);
-    setTimeout(() => setFormSubmitted(false), 5000);
+    setLoading(true);
+    setErrorMsg('');
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          formType: 'Contact Page Inquiry Form',
+          ...formData,
+        }),
+      });
+
+      const resData = await response.json();
+      if (resData.success) {
+        setFormSubmitted(true);
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          cityCountry: '',
+          course: '',
+          age: '',
+          message: '',
+        });
+        setTimeout(() => setFormSubmitted(false), 6000);
+      } else {
+        setErrorMsg(resData.error || 'Failed to send message. Please try again.');
+      }
+    } catch (err) {
+      console.error(err);
+      setErrorMsg('Failed to connect to server. Please check connection and try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -159,22 +207,30 @@ const ContactPage = () => {
                   Send Us a Message
                 </h3>
                 <p className="text-sm text-slate-500 mb-8">
-                  Fill out the form and a team member will get back to you within one business day.
+                  Fill out the form below to send an email to <span className="font-semibold text-[#1668A3]">noorspherequran@gmail.com</span>. Our team will get back to you shortly.
                 </p>
 
                 {formSubmitted ? (
                   <div className="bg-[#EAF5FC] border border-[#1668A3]/20 rounded-xl p-6 text-center">
                     <h4 className="font-bold text-[#0D3B5C] text-lg mb-2">Message Sent Successfully!</h4>
-                    <p className="text-sm text-[#6a859c]">Thank you for reaching out. Our team will contact you shortly.</p>
+                    <p className="text-sm text-[#6a859c]">Thank you for reaching out. An email has been sent via Nodemailer to noorspherequran@gmail.com.</p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+                    {errorMsg && (
+                      <div className="bg-red-50 border border-red-200 text-red-600 text-xs p-3 rounded-lg">
+                        {errorMsg}
+                      </div>
+                    )}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div className="flex flex-col gap-2">
                         <label className="text-xs font-bold text-[#0D3B5C] uppercase tracking-wider">Full Name</label>
                         <input
                           required
                           type="text"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
                           className="w-full bg-[#FAFCFE] border border-[#e2edf5] py-3.5 px-4 rounded-xl focus:outline-none focus:border-[#2F80ED] text-sm text-[#102e52] placeholder-slate-400"
                           placeholder="Your full name"
                         />
@@ -184,6 +240,9 @@ const ContactPage = () => {
                         <input
                           required
                           type="tel"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleChange}
                           className="w-full bg-[#FAFCFE] border border-[#e2edf5] py-3.5 px-4 rounded-xl focus:outline-none focus:border-[#2F80ED] text-sm text-[#102e52] placeholder-slate-400"
                           placeholder="Your phone number"
                         />
@@ -195,6 +254,9 @@ const ContactPage = () => {
                       <input
                         required
                         type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
                         className="w-full bg-[#FAFCFE] border border-[#e2edf5] py-3.5 px-4 rounded-xl focus:outline-none focus:border-[#2F80ED] text-sm text-[#102e52] placeholder-slate-400"
                         placeholder="your@email.com"
                       />
@@ -205,6 +267,9 @@ const ContactPage = () => {
                       <input
                         required
                         type="text"
+                        name="cityCountry"
+                        value={formData.cityCountry}
+                        onChange={handleChange}
                         className="w-full bg-[#FAFCFE] border border-[#e2edf5] py-3.5 px-4 rounded-xl focus:outline-none focus:border-[#2F80ED] text-sm text-[#102e52] placeholder-slate-400"
                         placeholder="Your City & Country"
                       />
@@ -213,13 +278,18 @@ const ContactPage = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div className="flex flex-col gap-2">
                         <label className="text-xs font-bold text-[#0D3B5C] uppercase tracking-wider">Course of Interest</label>
-                        <select className="w-full appearance-none bg-[#FAFCFE] border border-[#e2edf5] py-3.5 px-4 rounded-xl focus:outline-none focus:border-[#2F80ED] text-sm text-[#102e52] bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%20fill%3D%22none%22%20stroke%3D%22%231668A3%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:16px] bg-[right_16px_center] bg-no-repeat">
+                        <select
+                          name="course"
+                          value={formData.course}
+                          onChange={handleChange}
+                          className="w-full appearance-none bg-[#FAFCFE] border border-[#e2edf5] py-3.5 px-4 rounded-xl focus:outline-none focus:border-[#2F80ED] text-sm text-[#102e52] bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%20fill%3D%22none%22%20stroke%3D%22%231668A3%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:16px] bg-[right_16px_center] bg-no-repeat"
+                        >
                           <option value="">Select a Course</option>
-                          <option value="qaida">Noorani Qaida</option>
-                          <option value="quran">Quran Reading with Tajweed</option>
-                          <option value="hifz">Hifz (Quran Memorization)</option>
-                          <option value="arabic">Quranic Arabic Language</option>
-                          <option value="islamic">Basic Islamic Education</option>
+                          <option value="Noorani Qaida">Noorani Qaida</option>
+                          <option value="Quran Reading with Tajweed">Quran Reading with Tajweed</option>
+                          <option value="Hifz (Quran Memorization)">Hifz (Quran Memorization)</option>
+                          <option value="Quranic Arabic Language">Quranic Arabic Language</option>
+                          <option value="Basic Islamic Education">Basic Islamic Education</option>
                         </select>
                       </div>
                       <div className="flex flex-col gap-2">
@@ -227,6 +297,9 @@ const ContactPage = () => {
                         <input
                           required
                           type="text"
+                          name="age"
+                          value={formData.age}
+                          onChange={handleChange}
                           className="w-full bg-[#FAFCFE] border border-[#e2edf5] py-3.5 px-4 rounded-xl focus:outline-none focus:border-[#2F80ED] text-sm text-[#102e52] placeholder-slate-400"
                           placeholder="e.g. 8 years, or Adult"
                         />
@@ -238,6 +311,9 @@ const ContactPage = () => {
                       <textarea
                         required
                         rows="4"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
                         className="w-full bg-[#FAFCFE] border border-[#e2edf5] py-3.5 px-4 rounded-xl focus:outline-none focus:border-[#2F80ED] text-sm text-[#102e52] placeholder-slate-400 resize-none"
                         placeholder="Tell us a bit about your goals or schedule..."
                       ></textarea>
@@ -245,9 +321,10 @@ const ContactPage = () => {
 
                     <button
                       type="submit"
-                      className="w-full bg-[#2F80ED] text-white py-4 rounded-full font-bold shadow-[0_8px_20px_rgba(47,128,237,0.3)] hover:shadow-[0_12px_25px_rgba(47,128,237,0.5)] hover:bg-blue-600 transition-all duration-300 text-[15px]"
+                      disabled={loading}
+                      className="w-full bg-[#2F80ED] text-white py-4 rounded-full font-bold shadow-[0_8px_20px_rgba(47,128,237,0.3)] hover:shadow-[0_12px_25px_rgba(47,128,237,0.5)] hover:bg-blue-600 transition-all duration-300 text-[15px] disabled:opacity-50"
                     >
-                      Send Message
+                      {loading ? 'Sending Message via Nodemailer...' : 'Send Message'}
                     </button>
                   </form>
                 )}
@@ -393,9 +470,9 @@ const ContactPage = () => {
                   Call us directly and we will help you find the right course and teacher.
                 </p>
               </div>
-              <button className="bg-[#2F80ED] text-white px-8 py-3.5 rounded-full font-bold shadow-[0_8px_20px_rgba(47,128,237,0.3)] hover:shadow-[0_12.29px_24.58px_-8.19px_rgba(47,128,237,0.5)] hover:bg-blue-600 transition-all duration-300 text-[15px] whitespace-nowrap">
-                Call +1 (234) 567 890
-              </button>
+              <a href="tel:03708694049" className="bg-[#2F80ED] text-white px-8 py-3.5 rounded-full font-bold shadow-[0_8px_20px_rgba(47,128,237,0.3)] hover:shadow-[0_12.29px_24.58px_-8.19px_rgba(47,128,237,0.5)] hover:bg-blue-600 transition-all duration-300 text-[15px] whitespace-nowrap inline-block text-center">
+                Call 0370 8694049
+              </a>
             </div>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Mail, Phone, Globe } from 'lucide-react';
 import logo from '../assets/logo.png';
 
@@ -12,7 +13,9 @@ const Footer = () => {
           {/* Logo + Socials */}
           <div className="col-span-2 lg:col-span-1 text-center lg:text-left">
             <div className="mb-6 flex justify-center lg:justify-start">
-              <img src={logo} alt="Noor Sphere Logo" style={{ height: '70px', background: 'white', padding: '10px', borderRadius: '8px' }} />
+              <Link to="/">
+                <img src={logo} alt="Noor Sphere Logo" style={{ height: '70px', background: 'white', padding: '10px', borderRadius: '8px' }} />
+              </Link>
             </div>
             <p className="text-[#A9CCE3] text-sm leading-relaxed mb-8">
               Helping students of all ages around the world build a lifelong connection with the Holy Quran, anytime and anywhere.
@@ -29,12 +32,12 @@ const Footer = () => {
           <div className="text-center lg:text-left">
             <h4 className="text-white font-bold text-lg mb-6" style={{ fontFamily: "'Poppins', sans-serif" }}>Our Courses</h4>
             <ul className="flex flex-col gap-3">
-              <li><a href="#" className="text-blue-100 text-sm hover:text-white transition-all block">Noorani Qaida</a></li>
-              <li><a href="#" className="text-blue-100 text-sm hover:text-white transition-all block">Quran with Tajweed</a></li>
-              <li><a href="#" className="text-blue-100 text-sm hover:text-white transition-all block">Memorizing Quran (Hifz)</a></li>
-              <li><a href="#" className="text-blue-100 text-sm hover:text-white transition-all block">Islamic Education</a></li>
-              <li><a href="#" className="text-blue-100 text-sm hover:text-white transition-all block">Complete Namaz (Salah)</a></li>
-              <li><a href="#" className="text-blue-100 text-sm hover:text-white transition-all block">Translation & Tafseer</a></li>
+              <li><Link to="/courses" className="text-blue-100 text-sm hover:text-white transition-all block">Noorani Qaida</Link></li>
+              <li><Link to="/courses" className="text-blue-100 text-sm hover:text-white transition-all block">Quran with Tajweed</Link></li>
+              <li><Link to="/courses" className="text-blue-100 text-sm hover:text-white transition-all block">Memorizing Quran (Hifz)</Link></li>
+              <li><Link to="/courses" className="text-blue-100 text-sm hover:text-white transition-all block">Islamic Education</Link></li>
+              <li><Link to="/courses" className="text-blue-100 text-sm hover:text-white transition-all block">Complete Namaz (Salah)</Link></li>
+              <li><Link to="/courses" className="text-blue-100 text-sm hover:text-white transition-all block">Translation & Tafseer</Link></li>
             </ul>
           </div>
 
@@ -42,10 +45,10 @@ const Footer = () => {
           <div className="text-center lg:text-left">
             <h4 className="text-white font-bold text-lg mb-6" style={{ fontFamily: "'Poppins', sans-serif" }}>Quick Links</h4>
             <ul className="flex flex-col gap-3">
-              <li><a href="#" className="text-blue-100 text-sm hover:text-white transition-all block">Home</a></li>
-              <li><a href="#" className="text-blue-100 text-sm hover:text-white transition-all block">About Us</a></li>
-              <li><a href="#" className="text-blue-100 text-sm hover:text-white transition-all block">Fee Structure</a></li>
-              <li><a href="#" className="text-blue-100 text-sm hover:text-white transition-all block">Contact Us</a></li>
+              <li><Link to="/" className="text-blue-100 text-sm hover:text-white transition-all block">Home</Link></li>
+              <li><Link to="/about" className="text-blue-100 text-sm hover:text-white transition-all block">About Us</Link></li>
+              <li><Link to="/courses#pricing" className="text-blue-100 text-sm hover:text-white transition-all block">Fee Structure</Link></li>
+              <li><Link to="/contact" className="text-blue-100 text-sm hover:text-white transition-all block">Contact Us</Link></li>
             </ul>
           </div>
 
@@ -55,11 +58,15 @@ const Footer = () => {
             <ul className="flex flex-col gap-5 items-center lg:items-start">
               <li className="flex items-start gap-3 text-blue-100 text-sm">
                 <Mail size={18} className="shrink-0 text-[#6FB8EA] mt-1" />
-                <span>info@internationalquranicacademic.com</span>
+                <a href="mailto:noorspherequran@gmail.com" className="hover:text-white transition-colors">noorspherequran@gmail.com</a>
               </li>
               <li className="flex items-start gap-3 text-blue-100 text-sm">
                 <Phone size={18} className="shrink-0 text-[#6FB8EA] mt-1" />
-                <span>+1 (774) 544-3187<br/>+1 (703) 845-8591</span>
+                <span>
+                  <a href="tel:03708694049" className="hover:text-white transition-colors">0370 8694049</a>
+                  <br />
+                  <a href="tel:03467925130" className="hover:text-white transition-colors">0346 7925130</a>
+                </span>
               </li>
               <li className="flex items-start gap-3 text-blue-100 text-sm">
                 <Globe size={18} className="shrink-0 text-[#6FB8EA] mt-1" />

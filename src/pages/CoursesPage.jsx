@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Check, Plus, Minus } from 'lucide-react';
@@ -10,6 +11,7 @@ import memorizationIcon from '../assets/Hifz (Quran Memorization).png';
 import basicIslamicIcon from '../assets/Basic Islamic Education-2.png';
 import translationIcon from '../assets/Quranic Arabic Language.png';
 import GraduationCap from "../assets/Ijazah Certification.png";
+
 const courses = [
   {
     id: 1,
@@ -165,6 +167,18 @@ const faqData = [
 
 const CoursesPage = () => {
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === '#pricing') {
+      const el = document.getElementById('pricing');
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [location]);
 
   const toggleFaq = (index) => {
     setOpenFaqIndex(openFaqIndex === index ? -1 : index);
@@ -180,7 +194,7 @@ const CoursesPage = () => {
           <div className="inner text-center max-w-[850px] mx-auto">
             {/* Breadcrumb */}
             <div className="flex items-center justify-center gap-2 text-[14px] mb-8">
-              <a href="/" className="text-[#6A859C] hover:text-[#1668A3] transition-colors font-medium">Home</a>
+              <Link to="/" className="text-[#6A859C] hover:text-[#1668A3] transition-colors font-medium">Home</Link>
               <span className="text-[#2F80ED] font-semibold">/</span>
               <span className="text-[#0D3B5C] font-bold">Our Courses</span>
             </div>
@@ -281,9 +295,9 @@ const CoursesPage = () => {
                       </div>
 
                       {/* Button */}
-                      <button className="w-full py-3 rounded-full font-bold text-[#1668A3] border border-[#1668A3] hover:bg-[#1668A3] hover:text-white transition-all duration-300 text-[14px]">
+                      <Link to="/contact" className="w-full py-3 rounded-full font-bold text-[#1668A3] border border-[#1668A3] hover:bg-[#1668A3] hover:text-white transition-all duration-300 text-[14px] text-center block">
                         Learn More
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 );
@@ -332,7 +346,7 @@ const CoursesPage = () => {
       </section>
 
       {/* Pricing Plans */}
-      <section className="bg-white py-24">
+      <section id="pricing" className="bg-white py-24">
         <div className="container mx-auto px-4 lg:px-10">
           <div className="inner">
             <div className="text-center mb-16">
@@ -394,15 +408,16 @@ const CoursesPage = () => {
                     </ul>
                   </div>
 
-                  <button
-                    className={`w-full py-3.5 rounded-full font-bold text-[14.5px] transition-all duration-300 ${
+                  <Link
+                    to="/contact"
+                    className={`w-full py-3.5 rounded-full font-bold text-[14.5px] transition-all duration-300 text-center block ${
                       plan.isPopular
                         ? 'bg-[#2F80ED] text-white shadow-[0_6px_16px_rgba(47,128,237,0.35)] hover:bg-blue-600'
                         : 'border border-[#1668A3] text-[#1668A3] bg-white group-hover:bg-[#2F80ED] group-hover:text-white group-hover:border-transparent group-hover:shadow-[0_6px_16px_rgba(47,128,237,0.35)] hover:bg-blue-600'
                     }`}
                   >
                     {plan.buttonText}
-                  </button>
+                  </Link>
                 </div>
               ))}
             </div>
@@ -480,9 +495,9 @@ const CoursesPage = () => {
                   Book a free trial class and let a certified teacher help you choose.
                 </p>
               </div>
-              <button className="bg-[#2F80ED] text-white px-8 py-3.5 rounded-full font-bold shadow-[0_8px_20px_rgba(47,128,237,0.3)] hover:shadow-[0_12.29px_24.58px_-8.19px_rgba(47,128,237,0.5)] hover:bg-blue-600 transition-all duration-300 text-[15px] whitespace-nowrap">
+              <Link to="/contact" className="bg-[#2F80ED] text-white px-8 py-3.5 rounded-full font-bold shadow-[0_8px_20px_rgba(47,128,237,0.3)] hover:shadow-[0_12.29px_24.58px_-8.19px_rgba(47,128,237,0.5)] hover:bg-blue-600 transition-all duration-300 text-[15px] whitespace-nowrap inline-block">
                 Book Your Free Trial
-              </button>
+              </Link>
             </div>
           </div>
         </div>

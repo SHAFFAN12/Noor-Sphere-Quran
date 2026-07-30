@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -45,7 +46,7 @@ const teachers = [
     id: 4,
     name: 'Ustadha Aisha Noor',
     role: 'Islamic Studies & Arabic',
-    image: hafizRashidImg, // Reused/Alternative
+    image: hafizRashidImg,
     specialties: ['Islamic Studies', 'All Ages'],
     bio: 'Teaches Duas, Salah, and Seerah in an age appropriate way, making core beliefs practical and easy to remember.',
     experience: '8 yrs',
@@ -56,7 +57,7 @@ const teachers = [
     id: 5,
     name: 'Sheikh Omar Farouk',
     role: 'Quranic Arabic Language',
-    image: qariImranImg, // Reused/Alternative
+    image: qariImranImg,
     specialties: ['Nahw & Sarf', 'Teens & Adults'],
     bio: "Grammar focused teaching that helps students understand the Quran's meaning directly from the Arabic text.",
     experience: '13 yrs',
@@ -67,7 +68,7 @@ const teachers = [
     id: 6,
     name: 'Ustadha Khadija Malik',
     role: 'Hifz Specialist, Female Students',
-    image: ustadhaSaraImg, // Reused/Alternative
+    image: ustadhaSaraImg,
     specialties: ['Hifz', 'Kids & Teens'],
     bio: 'Builds a personal memorization plan for each student with daily lessons and long term revision built in.',
     experience: '10 yrs',
@@ -125,7 +126,7 @@ const TeachersPage = () => {
           <div className="inner max-w-[850px] mx-auto">
             {/* Breadcrumb */}
             <div className="flex items-center justify-center gap-2 text-[14px] mb-8">
-              <a href="/" className="text-[#6A859C] hover:text-[#1668A3] transition-colors font-medium">Home</a>
+              <Link to="/" className="text-[#6A859C] hover:text-[#1668A3] transition-colors font-medium">Home</Link>
               <span className="text-[#2F80ED] font-semibold">/</span>
               <span className="text-[#0D3B5C] font-bold">Our Teachers</span>
             </div>
@@ -277,9 +278,9 @@ const TeachersPage = () => {
                       </span>
                     </div>
 
-                    <button className="w-full py-3.5 rounded-full font-bold text-[#1668A3] border border-[#1668A3] hover:bg-[#3a82f6] hover:text-white transition-all duration-300 text-[14px]">
+                    <Link to="/contact" className="w-full py-3.5 rounded-full font-bold text-[#1668A3] border border-[#1668A3] hover:bg-[#3a82f6] hover:text-white transition-all duration-300 text-[14px] text-center block">
                       View Profile
-                    </button>
+                    </Link>
                   </div>
                 </div>
               ))}
@@ -341,9 +342,9 @@ const TeachersPage = () => {
                   Book a free trial class and meet a certified teacher suited to your goals.
                 </p>
               </div>
-              <button className="bg-[#2F80ED] text-white px-8 py-3.5 rounded-full font-bold shadow-[0_8px_20px_rgba(47,128,237,0.3)] hover:shadow-[0_12.29px_24.58px_-8.19px_rgba(47,128,237,0.5)] hover:bg-blue-600 transition-all duration-300 text-[15px] whitespace-nowrap">
+              <Link to="/contact" className="bg-[#2F80ED] text-white px-8 py-3.5 rounded-full font-bold shadow-[0_8px_20px_rgba(47,128,237,0.3)] hover:shadow-[0_12.29px_24.58px_-8.19px_rgba(47,128,237,0.5)] hover:bg-blue-600 transition-all duration-300 text-[15px] whitespace-nowrap inline-block">
                 Book Your Free Trial
-              </button>
+              </Link>
             </div>
           </div>
         </div>
