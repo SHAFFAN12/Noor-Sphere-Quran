@@ -1,4 +1,7 @@
 import nodemailer from 'nodemailer';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 export async function handleSendEmail(formData) {
   const {
@@ -69,8 +72,8 @@ export async function handleSendEmail(formData) {
     console.log(`NOTE: Set EMAIL_PASS in your .env file to enable live Gmail SMTP sending via Nodemailer.`);
     console.log(`======================================================\n`);
     return {
-      success: true,
-      message: 'Form submitted successfully! (SMTP configured - set EMAIL_PASS in .env for live sending)',
+      success: false,
+      error: 'EMAIL_PASS is missing in environment variables. Email could not be sent.',
     };
   }
 }

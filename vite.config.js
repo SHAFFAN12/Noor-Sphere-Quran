@@ -1,7 +1,10 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
+import dotenv from 'dotenv'
 import { handleSendEmail } from './server/sendEmail.js'
+
+dotenv.config()
 
 function emailApiPlugin() {
   return {

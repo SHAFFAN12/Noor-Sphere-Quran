@@ -91,7 +91,8 @@ const ContactPage = () => {
     setErrorMsg('');
 
     try {
-      const response = await fetch('/api/send-email', {
+      const apiUrl = import.meta.env.VITE_API_URL || '';
+      const response = await fetch(`${apiUrl}/api/send-email`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
