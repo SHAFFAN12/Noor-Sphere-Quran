@@ -58,7 +58,7 @@ const Footer = () => {
             <ul className="flex flex-col gap-5 items-center lg:items-start">
               <li className="flex items-start gap-3 text-blue-100 text-sm">
                 <Mail size={18} className="shrink-0 text-[#6FB8EA] mt-1" />
-                <a href="mailto:noorspherequran@gmail.com" className="hover:text-white transition-colors">noorspherequran@gmail.com</a>
+                <a href="mailto:muhammadshaffanedu@gmail.com" className="hover:text-white transition-colors">muhammadshaffanedu@gmail.com</a>
               </li>
               <li className="flex items-start gap-3 text-blue-100 text-sm">
                 <Phone size={18} className="shrink-0 text-[#6FB8EA] mt-1" />

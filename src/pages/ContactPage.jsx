@@ -17,7 +17,7 @@ const contactInfo = [
   {
     icon: emailIcon,
     title: 'Email Us',
-    value: 'noorspherequran@gmail.com',
+    value: 'muhammadshaffanedu@gmail.com',
   },
   {
     icon: locationIcon,
@@ -203,13 +203,13 @@ const ContactPage = () => {
                   Send Us a Message
                 </h3>
                 <p className="text-sm text-slate-500 mb-8">
-                  Fill out the form below to send an email to <span className="font-semibold text-[#1668A3]">noorspherequran@gmail.com</span>. Our team will get back to you shortly.
+                  Fill out the form below to send an email to <span className="font-semibold text-[#1668A3]">muhammadshaffanedu@gmail.com</span>. Our team will get back to you shortly.
                 </p>
 
                 {formSubmitted ? (
                   <div className="bg-[#EAF5FC] border border-[#1668A3]/20 rounded-xl p-6 text-center">
                     <h4 className="font-bold text-[#0D3B5C] text-lg mb-2">Message Sent Successfully!</h4>
-                    <p className="text-sm text-[#6a859c]">Thank you for reaching out. An email has been sent via Nodemailer to noorspherequran@gmail.com.</p>
+                    <p className="text-sm text-[#6a859c]">Thank you for reaching out. We will get back to you shortly at muhammadshaffanedu@gmail.com.</p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="flex flex-col gap-6">

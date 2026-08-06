@@ -114,7 +114,7 @@ const Hero = () => {
 
                 {submitted ? (
                   <div className="bg-blue-50 border border-blue-200 text-[#0D3B5C] p-4 rounded-xl text-center text-sm font-medium my-4">
-                    ✓ Application sent! We will contact you at noorspherequran@gmail.com shortly.
+                    ✓ Application sent! We will contact you at muhammadshaffanedu@gmail.com shortly.
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit}>

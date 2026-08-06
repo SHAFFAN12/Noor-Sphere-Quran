@@ -16,8 +16,8 @@ export async function handleSendEmail(formData) {
     message = ''
   } = formData;
 
-  const recipientEmail = 'noorspherequran@gmail.com';
-  const emailUser = process.env.EMAIL_USER || 'noorspherequran@gmail.com';
+  const recipientEmail = 'muhammadshaffanedu@gmail.com';
+  const emailUser = process.env.EMAIL_USER || 'muhammadshaffanedu@gmail.com';
   const emailPass = process.env.EMAIL_PASS || process.env.GMAIL_APP_PASSWORD;
 
   const htmlContent = `

@@ -119,7 +119,7 @@ const TrialBanner = () => {
 
             {submitted ? (
               <div className="bg-blue-900/50 border border-blue-400 text-white p-6 rounded-xl text-center text-sm font-medium">
-                ✓ Application sent successfully! We will contact you shortly via noorspherequran@gmail.com.
+                ✓ Application sent successfully! We will contact you shortly via muhammadshaffanedu@gmail.com.
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-4">
