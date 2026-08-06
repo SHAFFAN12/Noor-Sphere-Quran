@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { submitWeb3Form } from '../utils/web3forms';
 import heroImage from '../assets/hero-section-image.png';
 import bismillahImage from '../assets/bismillah.png';
 import expertTeachersIcon from '../assets/expert-teachers.png';
@@ -26,26 +27,21 @@ const Hero = () => {
     setLoading(true);
     setErrorMsg('');
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || '';
-      const response = await fetch(`${apiUrl}/api/send-email`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          formType: 'Hero Free Trial Form',
-          ...formData,
-        }),
+      const resData = await submitWeb3Form({
+        formType: 'Hero Free Trial Form',
+        ...formData,
       });
-      const resData = await response.json();
+
       if (resData.success) {
         setSubmitted(true);
         setFormData({ name: '', email: '', phone: '', course: '' });
         setTimeout(() => setSubmitted(false), 5000);
       } else {
-        setErrorMsg(resData.error || 'Failed to submit form. Please try again.');
+        setErrorMsg(resData.message || 'Failed to submit form. Please try again.');
       }
     } catch (err) {
       console.error(err);
-      setErrorMsg('Failed to connect to server. Please try again.');
+      setErrorMsg('Failed to submit form. Please try again.');
     } finally {
       setLoading(false);
     }

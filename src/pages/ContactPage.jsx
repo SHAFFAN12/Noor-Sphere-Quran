@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { MapPin, Plus, Minus } from 'lucide-react';
+import { submitWeb3Form } from '../utils/web3forms';
 import phoneIcon from '../assets/My work (57).png';
 import emailIcon from '../assets/My work (58).png';
 import locationIcon from '../assets/My work (59).png';
@@ -91,17 +92,11 @@ const ContactPage = () => {
     setErrorMsg('');
 
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || '';
-      const response = await fetch(`${apiUrl}/api/send-email`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          formType: 'Contact Page Inquiry Form',
-          ...formData,
-        }),
+      const resData = await submitWeb3Form({
+        formType: 'Contact Page Inquiry Form',
+        ...formData,
       });
 
-      const resData = await response.json();
       if (resData.success) {
         setFormSubmitted(true);
         setFormData({
@@ -115,11 +110,11 @@ const ContactPage = () => {
         });
         setTimeout(() => setFormSubmitted(false), 6000);
       } else {
-        setErrorMsg(resData.error || 'Failed to send message. Please try again.');
+        setErrorMsg(resData.message || 'Failed to send message. Please try again.');
       }
     } catch (err) {
       console.error(err);
-      setErrorMsg('Failed to connect to server. Please check connection and try again.');
+      setErrorMsg('Failed to send message. Please try again.');
     } finally {
       setLoading(false);
     }

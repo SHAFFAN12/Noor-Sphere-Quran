@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Check } from 'lucide-react';
+import { submitWeb3Form } from '../utils/web3forms';
 
 const TrialBanner = () => {
   const [formData, setFormData] = useState({
@@ -24,20 +25,15 @@ const TrialBanner = () => {
     setLoading(true);
     setErrorMsg('');
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || '';
-      const response = await fetch(`${apiUrl}/api/send-email`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          formType: 'Trial Banner Application Form',
-          name: `${formData.firstName} ${formData.lastName}`.trim(),
-          email: formData.email,
-          phone: formData.phone,
-          course: formData.course,
-          preferredTime: formData.preferredTime,
-        }),
+      const resData = await submitWeb3Form({
+        formType: 'Trial Banner Application Form',
+        name: `${formData.firstName} ${formData.lastName}`.trim(),
+        email: formData.email,
+        phone: formData.phone,
+        course: formData.course,
+        preferredTime: formData.preferredTime,
       });
-      const resData = await response.json();
+
       if (resData.success) {
         setSubmitted(true);
         setFormData({
@@ -50,11 +46,11 @@ const TrialBanner = () => {
         });
         setTimeout(() => setSubmitted(false), 5000);
       } else {
-        setErrorMsg(resData.error || 'Failed to submit application. Please try again.');
+        setErrorMsg(resData.message || 'Failed to submit application. Please try again.');
       }
     } catch (err) {
       console.error(err);
-      setErrorMsg('Failed to connect to server. Please try again.');
+      setErrorMsg('Failed to submit application. Please try again.');
     } finally {
       setLoading(false);
     }
